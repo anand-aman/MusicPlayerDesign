@@ -1,0 +1,692 @@
+html{
+	font-size: 1.2vw;
+	background-color: #0C0F27;
+}
+
+
+
+body{
+	background: linear-gradient(to top, #4169E1, #0C0F27);
+	margin: 0px;
+	color: white;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	font-family: Roboto !important; /*Custom Google Font used*/
+}
+
+section{
+	margin-top: 3%;
+	margin-bottom: 3%;
+	width: 100%;
+}
+
+/*HEADER*/
+header{
+	height: 8vh;
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 0.5rem;
+}
+
+#logo{
+	height: 3rem;
+	padding-right: 20%;
+}
+
+#header-fav{
+	margin-left: 3rem;
+}
+
+header>div{
+	display: flex;
+	align-items: center;
+	
+}
+
+#top-right-container div{
+	padding: 1rem;
+	box-sizing: border-box;
+}
+
+
+#search-container{
+	background-color: #12183E;
+	padding: 2rem;
+	border-radius: 1.5rem;
+	height: 2.5rem;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	box-sizing: border-box;
+}
+
+#search-container *{
+	padding-left: 0.2rem;
+	padding-right: 0.2rem;
+}
+
+#search-container input{
+	background: transparent;
+	border: none;
+	color: white;
+}
+#search-container input:focus{
+	outline: none;	
+}
+
+#avatar img{
+	height: 2.5rem;
+	border-radius: 50%;
+}
+
+/* Contents */
+
+.content{
+	display: flex;
+	width: 90%;
+	height: 81vh;
+	justify-content: space-around;
+}
+
+/*Main*/
+
+main{
+	width: 60vw;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+main::-webkit-scrollbar, aside::-webkit-scrollbar {
+	display: none;
+}
+
+aside{
+	/*margin-left: 2rem;*/
+	width: 20vw;
+	overflow: scroll;
+}
+
+/*CAROUSEL SECTION  Recommendation Section*/
+
+#recommendation{
+	width: 90%;
+	padding-bottom: 27%;
+	position: relative;
+	box-sizing: border-box;
+	overflow: visible;
+
+}
+
+#recommendation div{
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	animation: moveOut 0.6s ease-in-out forwards;
+}
+
+
+#recommendation div:hover{
+	z-index: 3;
+	animation: moveIn 0.8s ease-in-out forwards;
+}
+
+/* Animation for Carousel*/
+
+@keyframes moveIn{
+	from{
+		transform: scale(1);
+	}
+	to{
+		/*z-index: 3;*/
+		transform: scale(1.1);
+		transform-origin: center;
+	}
+}
+
+@keyframes moveOut{
+	from{
+		transform: scale(1.1);
+	}
+	to{
+		/*z-index: 3;*/
+		transform: scale(1);
+	}
+}
+
+#recommendation-one{
+	background: url("assets/recommend/1.jpg") center no-repeat;
+	background-size: contain;
+}
+
+/*Multiple Background Image is used for Blurred effect on top & Bottom*/
+/*On hover has two background images, First for forground which is primary image and Second for Background which is blurred.*/
+#recommendation-one:hover{
+	background: url("assets/recommend/1.jpg") center no-repeat, url("assets/recommend/1-blur.jpg") center no-repeat;
+	background-size: 100% 90%, 100% 110%;
+	
+}
+
+
+#recommendation-two{
+	left: 25%;
+	z-index: 2;
+	background: url("assets/recommend/2.jpg") center no-repeat;
+	background-size: contain;
+}
+
+#recommendation-two:hover{
+	background: url("assets/recommend/2.jpg") center no-repeat, url("assets/recommend/2-blur.jpg") center no-repeat;
+	background-size: 100% 90%, 100% 110%;
+	
+}
+
+
+#recommendation-three{
+	left: 50%;
+	background: url("assets/recommend/3.jpg") center no-repeat;
+	background-size: contain;
+}
+
+#recommendation-three:hover{
+	background: url("assets/recommend/3.jpg") center no-repeat, url("assets/recommend/3-blur.jpg") center no-repeat;
+	background-size: 100% 90%, 100% 110%;
+	
+}
+
+
+
+
+/* Latest Release Section */
+#latest-release-container{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 1rem;
+	justify-content: space-between;
+}
+
+/* Container for each song */
+.latest-release-content{
+	width: 45%;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem;
+	box-sizing: border-box;
+	min-width: 15rem;
+}
+
+/* Each song item */
+.latest-release-item{
+	display: flex;
+	align-items: center;
+	
+}
+
+.latest-release-item div img{
+	width: 5rem;
+}
+
+.latest-release-item div{
+	position: relative;
+}
+
+/* For Play Icon which is shown on Hover */
+.play-icon-onhover i{
+	position: absolute;
+	opacity: 0;
+	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+/* The image's opacity is reduced to show Play icon */
+.play-icon-onhover:hover img{
+	opacity: 0.5;
+}
+
+.play-icon-onhover:hover i{
+	opacity: 1;
+}
+
+/* Latest Release Title */
+.latest-release-title{
+	height: 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 1rem;
+	flex-wrap: nowrap;
+}
+
+.latest-release-title-name{
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+
+}
+
+.latest-release-title-date{
+	font-weight: 100;
+	font-size: 0.8rem;
+}
+
+.latest-release-item-end{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	font-size: 0.8rem;
+	flex-wrap: nowrap;
+	position: relative;
+}
+
+.latest-release-item-end>span{
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+}
+
+
+
+/* this is for the latest release drop down menu */
+.latest-release-dropdown {
+	position: absolute;
+	background-color: white;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	width: 0px;
+	height: 0px;
+	top: 20px;
+	right: 0px;
+	overflow: hidden;
+	z-index: 2;
+	box-shadow: 0px 0px 2px 1px black;
+	transition: all ease-in-out 0.3s;
+}
+
+/* For changing cursor to pointer on hover  */
+.fa-ellipsis-h {
+	cursor: pointer;
+}
+
+/* Checkbox is used as Drop down to avoid JavaScript */
+/* To hide checkboxed*/
+input[type="checkbox"] {
+	display: none;
+}
+
+input[type="checkbox"]:checked ~ .latest-release-dropdown {
+	width: max-content;
+	height: auto;
+	opacity: 1;
+	padding: 5px;
+}
+
+.drop-item{
+	margin: 0.5rem;
+}
+
+.drop-item span {
+	margin-left: 0.5rem;
+}
+
+a{
+	text-decoration: none;
+}
+
+/* This HR Tag is used to seperate item on the dropdown */
+hr{
+	width: 100%;
+	height: 0.05rem;
+	color:gray;
+	border: none;
+	margin: 0px;
+	background-color:gray;
+}
+
+
+
+/* POPULAR Artist  Section*/
+.artist-container{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+}
+
+/* Style for Individual Artist Container */
+.artist-item{
+	height: 8rem;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.artist-item>div{
+	position: relative;
+}
+
+.artist-item>div i{
+	position: absolute;
+}
+
+.artist-item img{
+	height: 6rem;
+	border-radius: 50%;
+}
+
+.artist-item img:hover{
+	transform: scale(1.1);
+}
+
+
+/* Station */
+#stations{
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	padding: 1rem;
+	box-sizing: border-box;
+	width: 100%;
+	background-color: #101542;
+}
+
+#station-icon{
+	height: 10rem;
+	margin-right: 1rem;
+}
+
+/* Station items are the images  */
+#station-items{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+#station-items>div{
+	height: 5rem;
+	width: 5rem;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
+	margin: 0.2rem;
+
+	/* Other Background Properties which is common for all items */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* On hovering station item: Love, Chill, etc.*/
+#station-items>div:hover{
+	transform:  scale(1.2);
+}
+
+
+/*Different Background Images for each item*/
+#station-love{
+	background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.25), rgba(117, 19, 93, 0.50)), url("assets/station/love.jpg");
+}
+
+#station-retro{
+	background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.25), rgba(117, 19, 93, 0.50)), url("assets/station/retro.jpg");
+}
+
+#station-chill{
+	background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.25), rgba(117, 19, 93, 0.50)),url("assets/station/chill.jpg");
+}
+
+#station-workout{
+	background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.25), rgba(117, 19, 93, 0.50)),url("assets/station/workout.jpg");
+}
+
+#station-rock{
+	background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.25), rgba(117, 19, 93, 0.50)),url("assets/station/rock.jpg");
+}
+
+#station-pop{
+	background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.25), rgba(117, 19, 93, 0.50)),url("assets/station/pop.jpg");
+}
+
+
+/* MUSIC Theme */
+/* Party, Electronic, */
+
+#music-theme{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+#music-theme>div{
+	width: 30%;
+	min-width: 12rem;
+	position: relative;
+	margin: 0.5rem;
+	overflow: hidden;
+}
+
+
+#music-theme img{
+	width: 100%;
+	transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
+}
+
+#music-theme img:hover{
+	transform: scale(1.2);
+	box-shadow: 0px 0px 12px 0.1px black;
+}
+
+
+
+#music-theme span{
+	font-size: 1.2rem;
+	position: absolute;
+	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+/* Latest English */
+.song-container{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.song-container-item img{
+	width: 8rem;
+	padding: 0.2rem;
+	box-sizing: border-box;
+}
+
+.song-container-item img:hover{
+	transform: scale(1.1);
+}
+
+.latest-song-name{
+	font-weight: 700;
+	margin: 0.2rem;
+}
+
+.latest-song-date{
+	font-size: 0.8rem;
+	margin: 0.2rem;
+}
+
+/* Song Queue Section */
+/*Aside*/
+
+#queue-heading-container{
+	position: relative;
+}
+
+.queue-heading{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.queue-heading div{
+	font-size: 0.7rem;
+	color: cyan;
+	cursor: pointer;
+}
+
+.queue-heading div span{
+	margin-right: 0.2rem;
+}
+
+
+.queue-song{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.queue-song-content{
+	display: flex;
+	align-items: center;
+}
+
+.queue-song-icon{
+	box-shadow: 5px none 5px 2px rgba(256, 256, 256, 0.1);
+}
+
+.queue-song img{
+	width: 2.5rem;
+	margin: 0.7rem;
+	border-radius: 0.2rem;
+	box-shadow: 0px 5px 5px 2px rgba(256, 256, 256, 0.1);
+}
+
+.queue-song-title{
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+
+.queue-song-subtitle, .queue-song-number, .queue-song-save{
+	font-size: 0.7rem;
+	color: #C0C0C0;
+}
+
+
+/* Footer - Player */
+footer{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background-color: #282828;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	z-index: 5;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+}
+
+#footer-song-info{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 100%;
+	width: 20%;
+}
+
+#footer-song-info>div{
+	margin: 1vh;
+}
+
+#footer-song-image{
+	height: 4rem;
+	width: 4rem;
+	margin: 1vh;
+	background: url("assets/1.jpg") center no-repeat;
+	background-size: contain;
+}
+
+#footer-song-name{
+	height: 6vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	
+}
+
+.subtitle{
+	color: #C0C0C0;
+	font-size: 0.9rem;
+	margin: 0.1rem;
+}
+
+/*Player Controls*/
+/* Pause, Next, Shuffle &other Icons and Slider Styling*/
+
+#player{
+	width: 40%;
+	min-width: 200px;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#player>div{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#player-control{
+	width: 50%;
+}
+
+#player-slider-container{
+	width: 100%;
+}
+
+input[type="range"]{
+	width: 80%;
+}
+
+
+/*Player Extras*/
+.player-extras{
+	display: flex;
+	width: 20%;
+	min-width: 115px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.volume-container{
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#volume-slider{
+	width: 80%;
+}
+
